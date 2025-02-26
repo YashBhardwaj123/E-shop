@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saree shop loader</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fdf2f8;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+    
+    .loader-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .saree {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      animation: wave 4s infinite ease-in-out;
+    }
+    
+    .saree-fold {
+      position: absolute;
+      height: 30px;
+      background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+      border-radius: 50%;
+      transform-origin: center left;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .fold-1 {
+      width: 180px;
+      top: 20px;
+      left: 10px;
+      background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+      animation: fold1 3s infinite ease-in-out;
+    }
+    
+    .fold-2 {
+      width: 160px;
+      top: 60px;
+      left: 20px;
+      background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+      animation: fold2 3s infinite ease-in-out 0.2s;
+    }
+    
+    .fold-3 {
+      width: 200px;
+      top: 100px;
+      left: 0;
+      background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+      animation: fold3 3s infinite ease-in-out 0.4s;
+    }
+    
+    .fold-4 {
+      width: 170px;
+      top: 140px;
+      left: 15px;
+      background: linear-gradient(90deg, #d4fc79 0%, #96e6a1 100%);
+      animation: fold4 3s infinite ease-in-out 0.6s;
+    }
+    
+    .fold-5 {
+      width: 190px;
+      top: 180px;
+      left: 5px;
+      background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+      animation: fold5 3s infinite ease-in-out 0.8s;
+    }
+    
+    @keyframes wave {
+      0%, 100% {
+        transform: rotate(-5deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+    
+    @keyframes fold1 {
+      0%, 100% {
+        transform: skewY(2deg) translateY(0);
+      }
+      50% {
+        transform: skewY(-2deg) translateY(-5px);
+      }
+    }
+    
+    @keyframes fold2 {
+      0%, 100% {
+        transform: skewY(-2deg) translateY(0);
+      }
+      50% {
+        transform: skewY(2deg) translateY(-5px);
+      }
+    }
+    
+    @keyframes fold3 {
+      0%, 100% {
+        transform: skewY(2deg) translateY(0);
+      }
+      50% {
+        transform: skewY(-2deg) translateY(-5px);
+      }
+    }
+    
+    @keyframes fold4 {
+      0%, 100% {
+        transform: skewY(-2deg) translateY(0);
+      }
+      50% {
+        transform: skewY(2deg) translateY(-5px);
+      }
+    }
+    
+    @keyframes fold5 {
+      0%, 100% {
+        transform: skewY(2deg) translateY(0);
+      }
+      50% {
+        transform: skewY(-2deg) translateY(-5px);
+      }
+    }
+    
+    .shop-name {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      opacity: 0;
+      animation: fadeIn 2s forwards 1s;
+    }
+    
+    .loading-text {
+      margin-top: 15px;
+      color: #666;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+    
+    .loading-dots {
+      display: inline-block;
+      width: 20px;
+      text-align: left;
+    }
+    
+    .loading-dots::after {
+      content: '';
+      animation: dots 1.5s infinite;
+    }
+    
+    @keyframes dots {
+      0% { content: '.'; }
+      33% { content: '..'; }
+      66% { content: '...'; }
+      100% { content: '.'; }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      filter: blur(1px);
+      opacity: 0;
+    }
+    
+    .sparkle-1 {
+      top: 30px;
+      left: 50px;
+      animation: sparkle 2s infinite 0.2s;
+    }
+    
+    .sparkle-2 {
+      top: 80px;
+      left: 180px;
+      animation: sparkle 2s infinite 0.6s;
+    }
+    
+    .sparkle-3 {
+      top: 150px;
+      left: 30px;
+      animation: sparkle 2s infinite 1s;
+    }
+    
+    .sparkle-4 {
+      top: 170px;
+      left: 160px;
+      animation: sparkle 2s infinite 1.4s;
+    }
+    
+    @keyframes sparkle {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.5); opacity: 0.8; }
+      100% { transform: scale(0); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="saree">
+      <div class="saree-fold fold-1"></div>
+      <div class="saree-fold fold-2"></div>
+      <div class="saree-fold fold-3"></div>
+      <div class="saree-fold fold-4"></div>
+      <div class="saree-fold fold-5"></div>
+      <div class="sparkle sparkle-1"></div>
+      <div class="sparkle sparkle-2"></div>
+      <div class="sparkle sparkle-3"></div>
+      <div class="sparkle sparkle-4"></div>
+    </div>
+    <div class="shop-name">Shree Keshavam Textiles</div>
+    <div class="loading-text">
+      LOADING<span class="loading-dots"></span>
+    </div>
+  </div>
+  
+  <script>
+    // Simulate loading time (remove this in production and use real loading events)
+    setTimeout(() => {
+      document.querySelector('.loader-container').style.display = 'none';
+      // Here you would redirect to your main site or show your content
+      document.body.innerHTML += '<div style="text-align: center; padding: 20px;">Your saree shop content would load here!</div>';
+    }, 5000);
+  </script>
+</body>
+</html>
