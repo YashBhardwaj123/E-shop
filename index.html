@@ -5,9 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <style>
+      #root {
+        display: none;
+      }
+      #loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+      }
+    </style>
   </head>
   <body>
+    <div id="loader"></div>
     <div id="root"></div>
+    <script>
+      // Load the loader content
+      fetch('loader.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('loader').innerHTML = data;
+        });
+      
+      // Wait for page to load completely
+      window.addEventListener('load', function() {
+        // Hide loader and show React app after 3 seconds
+        setTimeout(function() {
+          document.getElementById('loader').style.display = 'none';
+          document.getElementById('root').style.display = 'block';
+        }, 3000);
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
