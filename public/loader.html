@@ -8,10 +8,10 @@
     <style>
       /* Initially hide the React app */
       #root {
-        display: none;
+        display: none; /* Will be changed to block when loader is hidden */
       }
       
-      /* Improved loader styles with better centering */
+      /* Loader styles */
       .loader-container {
         position: fixed;
         top: 0;
@@ -28,6 +28,7 @@
         z-index: 9999;
       }
       
+      /* Rest of your loader styles remain the same */
       .saree {
         position: relative;
         width: 250px;
@@ -206,7 +207,7 @@
     </style>
   </head>
   <body>
-    <!-- Improved Loader HTML -->
+    <!-- Loader HTML -->
     <div id="loader" class="loader-container">
       <div class="saree">
         <div class="saree-fold fold-1"></div>
@@ -228,13 +229,27 @@
     <div id="root"></div>
     
     <script>
-      // Wait for page to load completely
-      window.addEventListener('load', function() {
-        // Hide loader and show React app after 3 seconds
+      // Fix: Use document.addEventListener instead of window.addEventListener
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add event listener to ensure React is loaded
+        const reactCheck = setInterval(function() {
+          // Check if React has rendered anything in the root element
+          if (document.getElementById('root').childNodes.length > 0) {
+            clearInterval(reactCheck);
+            
+            // Hide loader and show React app after 3 seconds
+            setTimeout(function() {
+              document.getElementById('loader').style.display = 'none';
+              document.getElementById('root').style.display = 'block';
+            }, 3000);
+          }
+        }, 100);
+        
+        // Fallback: If nothing happens after 10 seconds, show the app anyway
         setTimeout(function() {
           document.getElementById('loader').style.display = 'none';
           document.getElementById('root').style.display = 'block';
-        }, 3000);
+        }, 10000);
       });
     </script>
     <script type="module" src="/src/main.jsx"></script>
