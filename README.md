@@ -11,7 +11,7 @@
 ✅ **Interactive Sections** – Beautifully crafted product displays  
 
 ## 🚀 Live Demo  
-🔗 **Visit Here:** [Elegant Sarees](https://your-deployment-link.com)  
+🔗 **Visit Here:** [WEBSITE](https://e-shop-nu-five.vercel.app/)
 
 ## 🛠️ Tech Stack  
 ![Vite](https://img.shields.io/badge/Vite-Fast-blue?style=for-the-badge&logo=vite)  
