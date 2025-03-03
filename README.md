@@ -2,7 +2,6 @@
 
 🌸 **Elegant Sarees** is a beautifully designed **saree shop website** that showcases a stunning collection of ethnic wear. Built with **Vite, Tailwind CSS, and modern web technologies**, this project ensures a fast, smooth, and visually appealing shopping experience.  
 
-![Image](https://github.com/user-attachments/assets/f98be82b-8ca2-407c-8cb0-71ae985265fa)
 ## ✨ Features  
 ✅ **Responsive Design** – Looks amazing on mobile, tablet, and desktop  
 ✅ **Elegant UI** – Aesthetic visuals with smooth animations  
@@ -21,7 +20,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript)  
 
 ## 📸 Screenshots  
-![Homepage](https://your-image-link.com)  
+![Image](https://github.com/user-attachments/assets/f98be82b-8ca2-407c-8cb0-71ae985265fa)
 _🎨 Showcasing elegant sarees with a premium UI_  
 
 ## 📦 Installation & Setup  
