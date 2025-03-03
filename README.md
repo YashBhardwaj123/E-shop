@@ -1,4 +1,4 @@
-# 🛍️ Elegant Sarees - Frontend  
+# 🛍️ Saree Shop - Frontend  
 
 🌸 **Elegant Sarees** is a beautifully designed **saree shop website** that showcases a stunning collection of ethnic wear. Built with **Vite, Tailwind CSS, and modern web technologies**, this project ensures a fast, smooth, and visually appealing shopping experience.  
 
