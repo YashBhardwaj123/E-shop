@@ -86,7 +86,6 @@ const Footer = () => {
             </div>
 
             {/* social links */}
-
             <div>
               <div className="flex items-center gap-3 mt-6">
                 <a href="#">
@@ -111,6 +110,13 @@ const Footer = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center py-4">
+          <p className="text-sm text-black font-semibold">
+            © {new Date().getFullYear()} Shree Keshavam Textiles. All rights reserved. | Created by Yash Bhardwaj
+          </p>
         </div>
       </div>
     </div>
